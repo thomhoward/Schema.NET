@@ -33,7 +33,7 @@ namespace Schema.NET.Tool.Models
 
         public bool IsEnum => EnumerableExtensions
             .Traverse(this, x => x.SubClassOf)
-            .Any(x => x.Id == new Uri("http://schema.org/Enumeration"));
+            .Any(x => x.Id == new Uri("https://schema.org/Enumeration"));
 
         public bool IsArchived => EnumerableExtensions
             .Traverse(this, x => x.SubClassOf)
@@ -43,9 +43,7 @@ namespace Schema.NET.Tool.Models
             .Traverse(this, x => x.SubClassOf)
             .Any(x => string.Equals(x.Layer, LayerName.Meta, StringComparison.OrdinalIgnoreCase));
 
-        public bool IsPending => EnumerableExtensions
-            .Traverse(this, x => x.SubClassOf)
-            .Any(x => string.Equals(x.Layer, LayerName.Pending, StringComparison.OrdinalIgnoreCase));
+        public bool IsPending => string.Equals(this.Layer, LayerName.Pending, StringComparison.OrdinalIgnoreCase);
 
         public bool IsPrimitive => PrimitiveTypes.Contains(this.Label);
 

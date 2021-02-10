@@ -10,12 +10,12 @@
     public partial interface ICourse : ICreativeWork
     {
         /// <summary>
-        /// The identifier for the &lt;a class="localLink" href="http://schema.org/Course"&gt;Course&lt;/a&gt; used by the course &lt;a class="localLink" href="http://schema.org/provider"&gt;provider&lt;/a&gt; (e.g. CS101 or 6.001).
+        /// The identifier for the &lt;a class="localLink" href="https://schema.org/Course"&gt;Course&lt;/a&gt; used by the course &lt;a class="localLink" href="https://schema.org/provider"&gt;provider&lt;/a&gt; (e.g. CS101 or 6.001).
         /// </summary>
         OneOrMany<string> CourseCode { get; set; }
 
         /// <summary>
-        /// Requirements for taking the Course. May be completion of another &lt;a class="localLink" href="http://schema.org/Course"&gt;Course&lt;/a&gt; or a textual description like "permission of instructor". Requirements may be a pre-requisite competency, referenced using &lt;a class="localLink" href="http://schema.org/AlignmentObject"&gt;AlignmentObject&lt;/a&gt;.
+        /// Requirements for taking the Course. May be completion of another &lt;a class="localLink" href="https://schema.org/Course"&gt;Course&lt;/a&gt; or a textual description like "permission of instructor". Requirements may be a pre-requisite competency, referenced using &lt;a class="localLink" href="https://schema.org/AlignmentObject"&gt;AlignmentObject&lt;/a&gt;.
         /// </summary>
         Values<IAlignmentObject, ICourse, string> CoursePrerequisites { get; set; }
 
@@ -53,14 +53,14 @@
         public override string Type => "Course";
 
         /// <summary>
-        /// The identifier for the &lt;a class="localLink" href="http://schema.org/Course"&gt;Course&lt;/a&gt; used by the course &lt;a class="localLink" href="http://schema.org/provider"&gt;provider&lt;/a&gt; (e.g. CS101 or 6.001).
+        /// The identifier for the &lt;a class="localLink" href="https://schema.org/Course"&gt;Course&lt;/a&gt; used by the course &lt;a class="localLink" href="https://schema.org/provider"&gt;provider&lt;/a&gt; (e.g. CS101 or 6.001).
         /// </summary>
         [DataMember(Name = "courseCode", Order = 206)]
         [JsonConverter(typeof(ValuesJsonConverter))]
         public OneOrMany<string> CourseCode { get; set; }
 
         /// <summary>
-        /// Requirements for taking the Course. May be completion of another &lt;a class="localLink" href="http://schema.org/Course"&gt;Course&lt;/a&gt; or a textual description like "permission of instructor". Requirements may be a pre-requisite competency, referenced using &lt;a class="localLink" href="http://schema.org/AlignmentObject"&gt;AlignmentObject&lt;/a&gt;.
+        /// Requirements for taking the Course. May be completion of another &lt;a class="localLink" href="https://schema.org/Course"&gt;Course&lt;/a&gt; or a textual description like "permission of instructor". Requirements may be a pre-requisite competency, referenced using &lt;a class="localLink" href="https://schema.org/AlignmentObject"&gt;AlignmentObject&lt;/a&gt;.
         /// </summary>
         [DataMember(Name = "coursePrerequisites", Order = 207)]
         [JsonConverter(typeof(ValuesJsonConverter))]
